@@ -1,47 +1,29 @@
-import React, { useState } from "react";
-import uuidv4 from 'uuid/v4'
-import Main from "./components/Main";
+import React from "react";
 
-export const TodosContext = React.createContext()
+const local_storage_key = 'react.todos'
 
 function App() {
-  const [todos, setTodos] = useState(testingTodos)
 
-  function handleTodoAdd() {
-    const newTodo = {
-      id: uuidv4(),
-      time: new Date(),
-      text: '',
-      isCompleted: false
-    }
-
-    setTodos([...todos, newTodo])
-  }
-
-  const todosContextValue = {
-    handleTodoAdd
-  }
 
   return (
-    <TodosContext.Provider value={todosContextValue}>
-      <Main />
-    </TodosContext.Provider>
+    <div>
+      <h1>Stas's Todos</h1>
+      <div>
+        <input type='text' />
+        <button>Add Todo</button>
+      </div>
+
+      <div className='stats'>
+        <div className='total'>Total: <span>0</span></div>
+        <div className='finished'>Finished: <span>0</span></div>
+        <div className='left'>Left: <span>0</span></div>
+      </div>
+
+      <ol>
+        {/* <TodosList /> */}
+      </ol>
+    </div>
   )
 }
-
-const testingTodos = [
-  {
-    id: 1,
-    name: 'ceate react app',
-    person: 'stas',
-    date: 'now'
-  },
-  {
-    id: 2,
-    name: 'review react app',
-    person: 'vadim',
-    date: 'tomorrow'
-  },
-]
 
 export default App;

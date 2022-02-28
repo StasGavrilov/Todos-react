@@ -1,11 +1,19 @@
 import React from 'react';
 import Todo from './Todo';
-import { TodosContext } from '../App';
 
-function Todos() {
+function TodosList(props) {
+    const { todos } = props
+
     return (
-        <Todo />
+        todos.map(todo => {
+            <Todo
+                id={todo.id}
+                date={todo.date}
+                text={todo.text}
+                isCompleted={todo.isCompleted}
+            />
+        })
     )
 }
 
-export default Todos;
+export default TodosList;

@@ -1,10 +1,8 @@
 import React from 'react';
-import { TodosContext } from '../App';
 
 function Todo(props) {
     const {
         id,
-        date,
         text,
         isCompleted
     } = props
@@ -12,9 +10,8 @@ function Todo(props) {
     return (
         <div>
             <li>
-                <span>{text}</span>
-                <input type='checkbox' />
-                <button>Edit</button>
+                <span>{id}</span>
+                <input type='checkbox' value={isCompleted} />
                 <button>Delete</button>
             </li>
         </div>
