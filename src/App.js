@@ -1,16 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import TodosList from "./components/TodosList";
 
 const local_storage_key = 'react.todos'
 
 function App() {
+  const [todos, setTodos] = useState([])
+  const [text, setText] = useState('')
 
+  useEffect(() => {
+    const todoJSON = localStorage.getItem(local_storage_key)
+    if (todoJSON != null) setTodos(JSON.parse(todoJSON))
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(local_storage_key, JSON.stringify(todos))
+  }, [todos])
+
+  function handleTodoAdd() {
+    const todo = {
+      id: todos.length + 1,
+      text: text,
+      isCompleted: false
+    }
+
+    console.log([...todos, todo])
+
+    setTodos([...todos, todo])
+  }
+
+  function handleText(event) {
+    setText(event.target.value)
+  }
 
   return (
     <div>
       <h1>Stas's Todos</h1>
       <div>
-        <input type='text' />
-        <button>Add Todo</button>
+        <input type='text' onChange={handleText} />
+        <button onClick={handleTodoAdd}>Add Todo</button>
       </div>
 
       <div className='stats'>
@@ -20,7 +47,7 @@ function App() {
       </div>
 
       <ol>
-        {/* <TodosList /> */}
+        <TodosList todos={todos} />
       </ol>
     </div>
   )

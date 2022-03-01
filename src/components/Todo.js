@@ -10,7 +10,7 @@ function Todo(props) {
     return (
         <div>
             <li>
-                <span>{id}</span>
+                <span>{id}-{text}</span>
                 <input type='checkbox' value={isCompleted} />
                 <button>Delete</button>
             </li>
