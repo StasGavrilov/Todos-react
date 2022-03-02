@@ -8,11 +8,11 @@ function Todo(props) {
     } = props
 
     return (
-        <div>
+        <div className='todo-wrapper'>
             <li>
-                <span>{id}-{text}</span>
+                <span>{text}</span>
                 <input type='checkbox' value={isCompleted} />
-                <button>Delete</button>
+                <button>X</button>
             </li>
         </div>
     )

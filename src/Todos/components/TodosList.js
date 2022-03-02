@@ -7,7 +7,6 @@ function TodosList(props) {
     return (
         <>
             {todos.map(todo => {
-                console.log(todo)
                 return < Todo
                     key={todo.id}
                     id={todo.id}
