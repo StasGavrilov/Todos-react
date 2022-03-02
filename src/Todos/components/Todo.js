@@ -4,7 +4,8 @@ function Todo(props) {
     const {
         id,
         text,
-        isCompleted
+        isCompleted,
+        handleTodoDelete
     } = props
 
     return (
@@ -12,7 +13,7 @@ function Todo(props) {
             <li>
                 <span>{text}</span>
                 <input type='checkbox' value={isCompleted} />
-                <button>X</button>
+                <button onClick={() => handleTodoDelete(id)}>X</button>
             </li>
         </div>
     )

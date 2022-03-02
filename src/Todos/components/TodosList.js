@@ -2,13 +2,14 @@ import React from 'react';
 import Todo from './Todo';
 
 function TodosList(props) {
-    const { todos } = props
+    const { todos, handleTodoDelete } = props
 
     return (
         <>
             {todos.map(todo => {
-                return < Todo
+                return <Todo
                     key={todo.id}
+                    handleTodoDelete={handleTodoDelete}
                     id={todo.id}
                     text={todo.text}
                     isCompleted={todo.isCompleted}

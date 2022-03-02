@@ -1,9 +1,10 @@
 import React from "react";
-import TodosMain from "./Todos/components/TodosMain";
+import Todos from "./Todos/components/Todos";
+import todoApp from './Todos/css/todoApp.css'
 
 function App() {
   return (
-    <TodosMain />
+    <Todos />
   )
 }
 

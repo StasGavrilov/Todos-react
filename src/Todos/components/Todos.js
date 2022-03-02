@@ -9,7 +9,9 @@ function TodosMain() {
 
     useEffect(() => {
         const todoJSON = localStorage.getItem(local_storage_key)
-        if (todoJSON != null) setTodos(JSON.parse(todoJSON))
+        if (todoJSON != null) {
+            return setTodos(JSON.parse(todoJSON))
+        }
     }, [])
 
     useEffect(() => {
@@ -30,6 +32,10 @@ function TodosMain() {
         setText(event.target.value)
     }
 
+    function handleTodoDelete(id) {
+        setTodos(todos.filter(todo => todo.id !== id))
+    }
+
     return (
         <div>
             <h1>Stas's Todos</h1>
@@ -45,7 +51,7 @@ function TodosMain() {
             </div>
 
             <ol>
-                <TodosList todos={todos} />
+                <TodosList todos={todos} handleTodoDelete={handleTodoDelete} />
             </ol>
         </div>
     )

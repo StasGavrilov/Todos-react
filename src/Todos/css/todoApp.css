@@ -1,0 +1,13 @@
+@import-normalize;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 25px;
+}
+
+body {
+  background: rgb(90, 143, 125);
+}
