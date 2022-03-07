@@ -3,7 +3,7 @@ import TodosList from "./TodosList";
 
 const local_storage_key = 'react.todos'
 
-function TodosMain() {
+function Todos() {
     const [todos, setTodos] = useState([])
     const [text, setText] = useState('')
 
@@ -57,4 +57,4 @@ function TodosMain() {
     )
 }
 
-export default TodosMain;
+export default Todos;
