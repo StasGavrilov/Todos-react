@@ -5,14 +5,15 @@ function Todo(props) {
         id,
         text,
         isCompleted,
-        handleTodoDelete
+        handleTodoDelete,
+        handleTodoChange
     } = props
 
     return (
         <div className='todo-wrapper'>
             <li className='todo-list'>
                 <span>{text} </span>
-                <input type='checkbox' value={isCompleted} className='checkbox' />
+                <input type='checkbox' defaultChecked={isCompleted} className='checkbox' onClick={() => handleTodoChange(id)} />
                 <button onClick={() => handleTodoDelete(id)}>X</button>
             </li>
         </div>

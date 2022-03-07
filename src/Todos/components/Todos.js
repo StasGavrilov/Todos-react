@@ -33,7 +33,21 @@ function Todos() {
     }
 
     function handleTodoDelete(id) {
-        setTodos(todos.filter(todo => todo.id !== id))
+        const newTodos = todos.filter(todo => todo.id !== id)
+        setTodos(newTodos)
+    }
+
+    function handleTodoChange(id) {
+        const newTodos = todos.map(todo => {
+            if (todo.id === id) {
+                todo.isCompleted = !todo.isCompleted
+            }
+
+            return todo
+        })
+
+        setTodos(newTodos)
+        localStorage.setItem(local_storage_key, JSON.stringify(todos))
     }
 
     return (
@@ -51,7 +65,7 @@ function Todos() {
             </div>
 
             <ol>
-                <TodosList todos={todos} handleTodoDelete={handleTodoDelete} />
+                <TodosList todos={todos} handleTodoDelete={handleTodoDelete} handleTodoChange={handleTodoChange} />
             </ol>
         </div>
     )
