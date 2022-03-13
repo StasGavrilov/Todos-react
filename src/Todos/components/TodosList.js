@@ -5,7 +5,7 @@ function TodosList(props) {
     const { todos, handleTodoDelete, handleTodoChange } = props
 
     return (
-        <>
+        <div>
             {todos.map(todo => {
                 return <Todo
                     key={todo.id}
@@ -16,7 +16,7 @@ function TodosList(props) {
                     isCompleted={todo.isCompleted}
                 />
             })}
-        </>
+        </div>
     )
 }
 
