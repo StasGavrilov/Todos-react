@@ -14,6 +14,7 @@ function Todo(props) {
             <li className='todo-list'>
                 <span>{text} </span>
                 <input type='checkbox' defaultChecked={isCompleted} className='checkbox' onClick={() => handleTodoChange(id)} />
+                <button>Edit</button>
                 <button onClick={() => handleTodoDelete(id)}>X</button>
             </li>
         </div>

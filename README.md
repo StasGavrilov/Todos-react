@@ -1,14 +1,13 @@
 Tasks:
 
 Page - Todos:
-1. input - ✓
-2. add button - ✓
-3. show the todos - ✓
-4. each todo have delete button - ✓
-5. save all todos in localStorage - ✓
-6. refresh the page will load todos from localStorage - ✓
-7. each todo will have checkbox - ✓
-8. todos count - ❌
-9. add edit - ❌
-10. add person - ❌
-11. add search - ❌
+1. Input add button - ✓
+2. Show the todos - ✓
+3. Each todo have delete button - ✓
+4. Save all todos in localStorage - ✓
+5. Refresh the page will load todos from localStorage - ✓
+6. Each todo will have checkbox - ✓
+7. todos count - ✓
+8. add edit - ❌
+9. add person - ❌
+10. add search - ❌

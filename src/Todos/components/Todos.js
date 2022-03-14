@@ -7,6 +7,11 @@ function Todos() {
     const [todos, setTodos] = useState([])
     const [text, setText] = useState('')
 
+    const total = todos.length
+    const finishedTodos = todos.filter(todo => todo.isCompleted === true)
+    const done = finishedTodos.length
+    const left = total - done
+
     useEffect(() => {
         const todoJSON = localStorage.getItem(local_storage_key)
         if (todoJSON != null) {
@@ -59,9 +64,9 @@ function Todos() {
             </div>
 
             <div className='stats'>
-                <div className='total'>Total: <span>0</span></div>
-                <div className='finished'>Finished: <span>0</span></div>
-                <div className='left'>Left: <span>0</span></div>
+                <div className='total'>Total: <span>{total}</span></div>
+                <div className='finished'>Finished: <span>{done}</span></div>
+                <div className='left'>Left: <span>{left}</span></div>
             </div>
 
             <ol>
