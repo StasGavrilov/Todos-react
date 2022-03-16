@@ -23,7 +23,9 @@ function Todos() {
         localStorage.setItem(local_storage_key, JSON.stringify(todos))
     }, [todos])
 
-    function handleTodoAdd() {
+    function handleTodoAdd(e) {
+        e.preventDefault()
+
         const todo = {
             id: todos.length,
             text: text,
