@@ -8,6 +8,3 @@ Page - Todos:
 5. Refresh the page will load todos from localStorage - ✓
 6. Each todo will have checkbox - ✓
 7. todos count - ✓
-8. add edit - ❌
-9. add person - ❌
-10. add search - ❌
